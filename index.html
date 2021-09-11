@@ -88,4 +88,21 @@ Chicken burger
         </td>
     </tr>
 </table>
+<hr>
+<h1>Different algorithm</h1>
+<pre>
+<code>
+    double area(const vector<point>& fig) {
+        double res = 0;
+        for (unsigned i = 0; i < fig.size(); i++) {
+            point p = i ? fig[i - 1] : fig.back();
+            point q = fig[i];
+            res += (p.x - q.x) * (p.y + q.y);
+        }
+        return fabs(res) / 2;
+    }
+</code>
+</pre>
+<a href="https://cp-algorithms.com/geometry/area-of-simple-polygon.html">Algorithm Description</a>
+<p>We can choose a point O arbitrarily, iterate over all edges adding the oriented area of the triangle formed by the edge and point O. Again, due to the sign of area, extra area will be reduced.</p>
     
